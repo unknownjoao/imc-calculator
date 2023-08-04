@@ -1,31 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Work Sans', sans-serif;
-    position: relative;
-    background-image: url(./assents/bg.svg);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Work Sans", sans-serif;
+  background: linear-gradient(334deg, #f7137e, #7525e2, #6b97f7);
+  background-size: 180% 180%;
+  animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 300px;
-    height: 300px;
-    border: 1px solid red;
-    background-color: aliceblue;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e);
+  animation: gradient-animation 6s ease infinite;
+  background-size: 180% 180%;
+  border-radius: 20px;
+  animation: border-animation 6s ease infinite;
+}
+
+@keyframes border-animation {
+  0% {
+    -webkit-box-shadow: 0px 0px 60px 0px rgba(240, 0, 240, 1);
+    -moz-box-shadow: 0px 0px 60px 0px rgba(240, 0, 240, 1);
+    box-shadow: 0px 0px 60px 0px rgba(240, 0, 240, 1);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 60px 0px rgba(107, 151, 247, 1);
+    -moz-box-shadow: 0px 0px 60px 0px rgba(107, 151, 247, 1);
+    box-shadow: 0px 0px 60px 0px rgba(107, 151, 247, 1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 60px 0px rgba(240, 0, 240, 1);
+    -moz-box-shadow: 0px 0px 60px 0px rgba(240, 0, 240, 1);
+    box-shadow: 0px 0px 60px 0px rgba(240, 0, 240, 1);
+  }
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+form input {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+form label {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Defina o estilo do botão */
+.calcular-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calcular-btn:hover {
+  background-color: #14579e;
+  transition: all 0.3s ease;
+}
+
+/* Adicione a animação de clique */
+@keyframes buttonClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Quando o botão for clicado */
+.calcular-btn:active {
+  animation: buttonClickAnimation 0.2s;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+/* Quando o modal estiver visível */
+.modal.active {
+  display: block;
 }

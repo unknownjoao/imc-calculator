@@ -18,10 +18,16 @@
                 <label for="">Altura (m)</label><br/>
                 <input type="text" id="altura" name="altura">
                 <br>
-                <input type="button" value="Calcular" onclick="calcularImc()">
+                <input type="button" value="Calcular" onclick="calcularImc()" class="calcular-btn">
             </form>
-            <h2>Resultado: </h2>
-            <p id="resultado"></p>
+            <!-- Adicione o modal (popout) para exibir o resultado -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="fecharModal()">&times;</span>
+                    <h2>Resultado do IMC</h2>
+                    <p id="resultado"></p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
